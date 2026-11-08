@@ -1,4 +1,4 @@
-# 全球数字情报局 · 博客
+# 全球数字情报橘 · 博客
 
 - 地址：https://rayli090602-source.github.io/
 - 平台：GitHub Pages（Jekyll，$0，无广告，不用绑卡）
