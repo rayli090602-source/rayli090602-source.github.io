@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="{{ '/' | relative_url }}">🏠 全球<b>数字情报局</b></a>
+<nav><a href="{{ '/' | relative_url }}">首页</a><a href="{{ '/archive.html' | relative_url }}">归档</a><a href="{{ '/fupan.html' | relative_url }}">复盘</a></nav>
+</div></header>
+<main class="wrap">{{ content }}</main>
+<footer>全球数字情报局 · 每天一条视频的文字目录 · 视频见 YouTube，文字版在这里</footer>
+<script src="{{ '/assets/search.js' | relative_url }}"></script>
+</body>
+</html>

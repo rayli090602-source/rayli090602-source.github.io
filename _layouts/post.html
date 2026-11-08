@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="post">
+<h1>{{ page.title }}</h1>
+<div class="meta"><span>📅 {{ page.date | date: "%Y-%m-%d" }}</span><span class="tag">{{ page.categories | first }}</span></div>
+{% if page.video and page.video != "" %}
+<div class="videobox">🎬 本期视频：<a href="{{ page.video }}" target="_blank" rel="noopener">在 YouTube 观看</a></div>
+{% else %}
+<div class="videobox">🎬 本期视频：待发布到 YouTube 后，这里会补上链接。</div>
+{% endif %}
+{{ content }}
+<p class="note">说明：每条只写一句话概括 + 来源，想看详细讲法点上面视频。查不到的写“未查到”，不编。</p>
+<p><a href="{{ '/' | relative_url }}">← 回首页目录</a></p>
+</article>
