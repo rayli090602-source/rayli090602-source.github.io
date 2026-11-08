@@ -1,0 +1,7 @@
+title: 全球数字情报局
+description: 每天一条视频的文字目录：哪天发生了什么，一屏看完。视频在 YouTube / Bilibili，这里只留文字版和来源。
+url: https://rayli090602-source.github.io
+baseurl: ""
+lang: zh-CN
+markdown: kramdown
+permalink: /:year/:month/:day/:title/

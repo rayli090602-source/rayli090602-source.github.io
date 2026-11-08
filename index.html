@@ -1,0 +1,33 @@
+---
+layout: default
+title: 首页
+---
+<div class="hero">
+<h1>全球数字情报局</h1>
+<p>每天一条视频的文字目录。点进来像翻目录：哪年、哪月、哪天，发生了什么，一屏看完。</p>
+</div>
+
+<div class="search">
+<input id="q" type="search" placeholder="搜索：输入关键词，比如 霍尔木兹、阿布扎比…">
+<small>搜索是自动的，不用你打标签、不用分类，搜标题和正文里的词就行。</small>
+</div>
+
+<div class="pills">
+<button class="pill active" data-cat="全部">🏠 全部</button>
+<button class="pill" data-cat="日报">日报</button>
+<button class="pill" data-cat="复盘">复盘</button>
+</div>
+
+<div id="list">
+{% for post in site.posts %}
+<article class="card" data-cat="{{ post.categories | first }}" data-text="{{ post.title }} {{ post.excerpt | strip_html }}">
+<div class="main">
+<h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+<div class="meta"><span>📅 {{ post.date | date: "%Y-%m-%d" }}</span><span class="tag">{{ post.categories | first }}</span></div>
+<p class="excerpt">{{ post.excerpt | strip_html | truncate: 90 }}</p>
+</div>
+<div class="arrow">›</div>
+</article>
+{% endfor %}
+</div>
+<p id="empty" style="display:none;color:#94a3b8">没找到，换个词试试，比如日期 2026-11-08。</p>

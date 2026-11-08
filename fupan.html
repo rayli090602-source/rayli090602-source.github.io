@@ -1,0 +1,20 @@
+---
+layout: default
+title: 复盘
+---
+<h1 style="margin-top:24px">每周 / 每月复盘</h1>
+<p style="color:#94a3b8">日报是每天记一笔，复盘是回头看：这周 5 件大事怎么连起来的，本月热词是什么。复盘文章会和日报一样出现在这里，分类是“复盘”。</p>
+<div id="list">
+{% for post in site.posts %}
+{% if post.categories contains "复盘" %}
+<article class="card" data-cat="复盘" data-text="{{ post.title }}">
+<div class="main">
+<h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+<div class="meta"><span>📅 {{ post.date | date: "%Y-%m-%d" }}</span><span class="tag">复盘</span></div>
+</div>
+<div class="arrow">›</div>
+</article>
+{% endif %}
+{% endfor %}
+</div>
+<p style="color:#94a3b8">目前还没有复盘文章。第一篇会在满一周后发。</p>

@@ -1,0 +1,17 @@
+---
+layout: default
+title: 归档
+---
+<h1 style="margin-top:24px">归档 · 按年月日</h1>
+<p style="color:#94a3b8">像目录一样翻：先找年，再找月，再找那一天。</p>
+{% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year in postsByYear %}
+<h2 class="archive-year">{{ year.name }} 年</h2>
+{% assign postsByMonth = year.items | group_by_exp: "post", "post.date | date: '%m'" %}
+{% for month in postsByMonth %}
+<h3 style="color:#94a3b8">{{ month.name }} 月</h3>
+{% for post in month.items %}
+<div class="archive-item"><time>{{ post.date | date: "%m-%d" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
+{% endfor %}
+{% endfor %}
+{% endfor %}
